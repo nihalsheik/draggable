@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+        }
+
+        body,
+        h1,
+        h2,
+        h3 {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        pre {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .container {
+            background-color: #fefefe;
+            width: 400px;
+            height: 250px;
+            border: 1px solid #aaaaaa;
+            box-shadow: 3px 3px 10px 2px #cac5c5;
+            position: absolute;
+            overflow: hidden;
+            border-radius: 6px;
+        }
+
+        .dragger {
+            cursor: move;
+            height: 14px;
+            width: 100%;
+            background: #f1e767;
+            background: -moz-linear-gradient(top, #f1e767 0%, #feb645 100%);
+            background: -webkit-linear-gradient(top, #f1e767 0%, #feb645 100%);
+            background: linear-gradient(to bottom, #f1e767 0%, #feb645 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#feb645', GradientType=0);
+            padding: 10px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="draggable.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#container1').draggable({ dragger: 'dragger1' });
+            $('#container2').draggable();
+            $('#container3').draggable({ dragger: 'dragger3' });
+        });
+    </script>
+</head>
+
+<body style="overflow:hidden;">
+    <div style="height:30px;padding:15px;background-color:#09a3d1;width:100%;margin:0px;">
+        <span style="font-size:20px;">Draggable DEMO</span>
+    </div>
+
+    <div style="padding:20px;overflow:auto;position: relative;height:500px;">
+
+        <div id="container1" class="container">
+            <div id="dragger1" class="dragger">Draggable</div>
+            <pre>
+    $('#container1').draggable({ 
+        dragger: 'dragger1' 
+    });
+            </pre>
+        </div>
+
+
+        <div id="container2" class="container" style="left:870px;">
+            Draggable
+            <pre>
+                    $('#container2').draggable();
+            </pre>
+        </div>
+
+        <div id="container3" class="container" style="left:450px;">
+            <div id="dragger3" class="dragger">Draggable</div>
+            <pre>
+        $('#container3').draggable({ 
+            dragger: 'dragger3' 
+        });
+            </pre>
+        </div>
+
+    </div>
+</body>
+
+</html>
